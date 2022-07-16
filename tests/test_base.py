@@ -1,14 +1,9 @@
-import pytest
-from SparkMLTransforms.base import IdentityFitTransformer
-from pandas.testing import assert_frame_equal
 import pandas as pd
-
+import pytest
+from pandas.testing import assert_frame_equal
 from pyspark.sql import SparkSession
 
-
-@pytest.fixture(scope='package')
-def spark() -> SparkSession:
-    return SparkSession.builder.getOrCreate()
+from SparkMLTransforms.base import IdentityFitTransformer
 
 
 @pytest.mark.parametrize(
