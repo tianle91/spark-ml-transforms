@@ -17,7 +17,7 @@ class IdentityFitTransformer:
     @property
     def input_output_columns(self) -> Dict[str, str]:
         '''Input and output columns are one-to-one.
-        
+
         Note: If multiple columns are created from a single input column, pack a StructType into the
         output column.
         '''
