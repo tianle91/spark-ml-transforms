@@ -17,7 +17,8 @@ def test_FourierFeatures(spark: SparkSession):
         'day_of_week': True,
         'hour_of_day': False,
         'minute_of_hour': False,
-        'use_period_fraction': 1. / 7., # limits the number of output columns to check
+        # limits the number of output columns to check
+        'use_period_fraction': 1. / 7.,
     }
     output_df = FourierFeatures(input_columns=['dt'], params=params).fit_transform(input_df)
     output_df = unpack_structtype_column(output_df, 'dt_FourierFeatures')

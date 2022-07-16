@@ -32,7 +32,7 @@ class IdentityFitTransformer:
         '''Transform dataframe using only internal state, which is not be modified by this method.
 
         Note: If you need to do some joins with a mapping created from fit(), use a udf instead,
-            which works better by not shuffling.
+        which works better by not shuffling.
         '''
         for input_column, output_column in self.input_output_columns.items():
             # An identity transformation is still a transformation
