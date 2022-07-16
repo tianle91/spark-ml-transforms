@@ -12,7 +12,7 @@ from SparkMLTransforms.encoder import CategoricalToIntegerEncoder
         pytest.param(
             pd.DataFrame({'a': [0, 1, 2, 3]}),
             pd.DataFrame({'a_CategoricalToIntegerEncoder': [0, 1, 2, 3]}),
-            id='integer'
+            id='identity'
         ),
     ]
 )
@@ -24,5 +24,4 @@ def test_CategoricalToIntegerEncoder(spark: SparkSession, input_df: pd.DataFrame
         .transform(input_df)
         .toPandas()
     )
-    # somehow toPandas converted integer to float, fix later or nah?
     assert_frame_equal(output_df, expected_df)
