@@ -38,3 +38,6 @@ class IdentityFitTransformer:
             # An identity transformation is still a transformation
             df = df.withColumn(output_column, F.col(input_column)).drop(input_column)
         return df
+
+    def fit_transform(self, df: DataFrame) -> DataFrame:
+        return self.fit(df=df).transform(df=df)

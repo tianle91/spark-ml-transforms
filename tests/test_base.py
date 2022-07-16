@@ -17,9 +17,7 @@ from SparkMLTransforms.base import IdentityFitTransformer
     ]
 )
 def test_IdentityFitTransformer(spark: SparkSession, input_df: pd.DataFrame, expected_df: pd.DataFrame):
-    output_df = (
-        IdentityFitTransformer(input_columns=['a'])
-        .transform(spark.createDataFrame(input_df))
-        .toPandas()
-    )
+    input_df = spark.createDataFrame(input_df)
+    output_df = IdentityFitTransformer(input_columns=['a']).fit_transform(input_df)
+    output_df = output_df.toPandas()
     assert_frame_equal(output_df, expected_df)

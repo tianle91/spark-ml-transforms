@@ -18,10 +18,6 @@ from SparkMLTransforms.encoder import CategoricalToIntegerEncoder
 )
 def test_CategoricalToIntegerEncoder(spark: SparkSession, input_df: pd.DataFrame, expected_df: pd.DataFrame):
     input_df = spark.createDataFrame(input_df)
-    output_df = (
-        CategoricalToIntegerEncoder(input_columns=['a'])
-        .fit(input_df)
-        .transform(input_df)
-        .toPandas()
-    )
+    output_df = CategoricalToIntegerEncoder(input_columns=['a']).fit_transform(input_df)
+    output_df = output_df.toPandas()
     assert_frame_equal(output_df, expected_df)

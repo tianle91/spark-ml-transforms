@@ -15,11 +15,7 @@ def test_HolidayFeatures(spark: SparkSession):
         'years': [2021, 2022, 2023],
         'country': 'US'
     }
-    output_df = (
-        HolidayFeatures(input_columns=['dt'], params=params)
-        .fit(input_df)
-        .transform(input_df)
-    )
+    output_df = HolidayFeatures(input_columns=['dt'], params=params).fit_transform(input_df)
     output_df = unpack_structtype_column(output_df, 'dt_HolidayFeatures')
     assert output_df.columns == [
         'dt_HolidayFeatures_us_holiday_days_since_last',
