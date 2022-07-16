@@ -1,5 +1,5 @@
 isort
-pylint
+ipykernel
 autopep8
 pytest
 flake8
