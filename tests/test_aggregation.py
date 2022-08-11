@@ -25,7 +25,7 @@ from SparkMLTransforms.aggregation import AggregatedFeatures
                 'b_num_unique': [1, 1],
                 'b_mode': ['a', 'b'],
             }),
-            id='integer'
+            id='simple'
         ),
     ]
 )
