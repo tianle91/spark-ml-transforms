@@ -1,5 +1,5 @@
 # https://github.com/ykursadkaya/pyspark-Docker
-ARG IMAGE_VARIANT=slim-buster
+ARG IMAGE_VARIANT=buster
 ARG OPENJDK_VERSION=11
 ARG PYTHON_VERSION=3.9.8
 
