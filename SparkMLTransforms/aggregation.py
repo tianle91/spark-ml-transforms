@@ -3,11 +3,12 @@ from typing import Dict, List, Optional
 import pandas as pd
 import pyspark.sql.functions as F
 from pyspark.sql import DataFrame
+from pyspark.sql.types import StringType
 
 from SparkMLTransforms.base import IdentityFitTransformer
 
 
-@F.udf(returnType='string')
+@F.udf(returnType=StringType())
 def get_mode_udf(list_of_things):
     if len(list_of_things) == 0:
         return None
