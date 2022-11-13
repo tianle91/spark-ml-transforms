@@ -8,7 +8,7 @@ FROM openjdk:${OPENJDK_VERSION}-${IMAGE_VARIANT}
 
 COPY --from=py3 / /
 
-ARG PYSPARK_VERSION=3.2.0
+ARG PYSPARK_VERSION=3.2.2
 RUN pip --no-cache-dir install pyspark==${PYSPARK_VERSION}
 
 RUN apt update -y && apt install git
