@@ -1,4 +1,4 @@
 pyspark==3.2.1
-pandas
-SpaceTimePandas
-xgboost
+pandas==1.5.1
+SpaceTimePandas==0.3.3
+xgboost==1.7.1
