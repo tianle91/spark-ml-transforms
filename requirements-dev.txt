@@ -1,5 +1,6 @@
-isort
-ipykernel
 autopep8
-pytest
 flake8
+ipykernel
+isort
+pytest
+scikit-learn
