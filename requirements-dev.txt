@@ -3,4 +3,4 @@ flake8
 ipykernel
 isort
 pytest
-scikit-learn
+scikit-learn==1.1.3
